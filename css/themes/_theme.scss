@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.ir-pm {
+  display: block;
+  overflow: hidden;
+  font-size: 0px;
+  line-height: 0;
+  text-indent: -9999px;
+} /* 사용된 이미지내 의미있는 텍스트의 대체텍스트를 제공할때 */
+.ir-wa {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+} /* 중요한 이미지 대체텍스트로 이미지off시에도 대체 텍스트를 보여주고자 할때 */
+.screen-out {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+} /* 대체텍스트가 아닌 접근성을 위한 숨김텍스트를 제공할때 */
+.screen-hide {
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+} /* screen_out클래스를 사용할 수 없으며, 해당 텍스트를 숨겨야 할때 */
+.blind {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
+}
+
+.transition-3 {
+  @include trans-animate(0.3, 'ease');
+}
+.transition-5 {
+  @include trans-animate(0.5, 'ease');
+}
+
+.teleNum {
+  color: inherit !important;
+}
+
+/* 
+** opacity 
+*/
+.opacity_0 {
+  @include opacity-calculate(0);
+}
+.opacity_10 {
+  @include opacity-calculate(0.1);
+}
+.opacity_15 {
+  @include opacity-calculate(0.15);
+}
+.opacity_20 {
+  @include opacity-calculate(0.2);
+}
+.opacity_25 {
+  @include opacity-calculate(0.25);
+}
+.opacity_30 {
+  @include opacity-calculate(0.3);
+}
+.opacity_35 {
+  @include opacity-calculate(0.35);
+}
+.opacity_40 {
+  @include opacity-calculate(0.4);
+}
+.opacity_45 {
+  @include opacity-calculate(0.45);
+}
+.opacity_50 {
+  @include opacity-calculate(0.5);
+}
+.opacity_55 {
+  @include opacity-calculate(0.55);
+}
+.opacity_60 {
+  @include opacity-calculate(0.6);
+}
+.opacity_65 {
+  @include opacity-calculate(0.65);
+}
+.opacity_70 {
+  @include opacity-calculate(0.7);
+}
+.opacity_75 {
+  @include opacity-calculate(0.75);
+}
+.opacity_80 {
+  @include opacity-calculate(0.8);
+}
+.opacity_85 {
+  @include opacity-calculate(0.85);
+}
+.opacity_90 {
+  @include opacity-calculate(0.9);
+}
+.opacity_95 {
+  @include opacity-calculate(0.95);
+}
+
+/* 
+** wrap, container 
+*/
+
+.fd_wrap {
+  @include container-box(100%, 100%);
+
+  @include devices(pc) {
+    @include container-box(100%, 1200px);
+  }
+}
+.fd_wrap:after {
+  @include after-clear;
+}
+.fd_container {
+  @include container-box(1200px, 1200px);
+
+  @include devices(mobile) {
+    @include container-box(100%, 100%);
+  }
+  @include devices(tablet) {
+    @include container-box(100%, 100%);
+  }
+  @include devices(pc) {
+    @include container-box(1400px, 1400px);
+  }
+}
+.fd_container:after {
+  @include after-clear;
+}
+.fd_container.type_center {
+  margin: 0 auto;
+}
+
+/* 
+** grid, col
+*/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196f3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}

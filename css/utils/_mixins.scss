@@ -1,0 +1,34 @@
+@mixin opacity-calculate($param: 0.1) {
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$param * 100})';
+  opacity: $param * 100;
+  filter: alpha(opacity=#{$param * 100});
+  zoom: 1;
+  //@debug 'divider offset: #{$param}';
+}
+
+@mixin trans-animate($param: 0.5, $timing: 'ease') {
+  -webkit-transition: all #{$param}s #{$timing};
+  -moz-transition: all #{$param}s #{$timing};
+  -o-transition: all #{$param}s #{$timing};
+  -ms-transition: all #{$param}s #{$timing};
+  transition: all #{$param}s #{$timing};
+}
+
+@mixin container-box($width: 100%, $min-width: 1200px) {
+  position: relative;
+  display: block;
+  width: $width;
+  min-width: $min-width;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+@mixin after-clear {
+  display: block;
+  height: 0;
+  content: '.';
+  font-size: 0;
+  visibility: hidden;
+  clear: both;
+}

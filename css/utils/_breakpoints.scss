@@ -1,0 +1,17 @@
+@mixin devices($breakpoint) {
+  $width: null;
+
+  @if $width == null and $breakpoint == mobile {
+    $width: map-get($grid-breakpoints, 'xs');
+  } @else if $width == null and $breakpoint == pc {
+    $width: map-get($grid-breakpoints, 'xl');
+  } @else if $width == null and $breakpoint == tablet {
+    $width: map-get($grid-breakpoints, 'md');
+  }
+
+  //@debug 'divider offset: #{$width}';
+
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
