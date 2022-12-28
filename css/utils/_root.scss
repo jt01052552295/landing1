@@ -1,0 +1,23 @@
+:root {
+  // color
+  @each $color, $value in $colors {
+    --#{$prefix}#{$color}: #{$value};
+  }
+
+  @each $color, $value in $grays {
+    --#{$prefix}gray-#{$color}: #{$value};
+  }
+
+  @each $color, $value in $theme-colors {
+    --#{$prefix}#{$color}: #{$value};
+  }
+
+  // font
+  --#{$prefix}font-sans-serif: #{$font-family-sans-serif};
+
+  @each $name, $value in $grid-breakpoints {
+    --#{$prefix}breakpoint-#{$name}: #{$value};
+  }
+
+  --#{$prefix}gutter-x: #{$grid-gutter-width};
+}

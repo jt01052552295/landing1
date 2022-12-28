@@ -5,23 +5,22 @@ import AppLayout from '../components/AppLayout';
 const Main = (props) => {
   return (
     <AppLayout>
-      <main>
-        <div className="fd_wrap">
-          <div className="fd_container type_center">
-            <div className="grid-container">
-              <div className="grid-item item1">1</div>
-              <div className="grid-item">2</div>
-              <div className="grid-item">3</div>
-              <div className="grid-item">4</div>
-              <div className="grid-item">5</div>
-              <div className="grid-item">6</div>
-              <div className="grid-item">7</div>
-              <div className="grid-item">8</div>
-              <div className="grid-item">9</div>
-            </div>
-          </div>
+      <div className="fd-container-fluid">
+        <div className="grid">
+          <div className="col-1 col-tablet-12">1</div>
+          <div className="col-2 col-pc-12">2</div>
+          <div className="col-3">3</div>
+          <div className="col-4">4</div>
+          <div className="col-5">5</div>
+          <div className="col-6">6</div>
+          <div className="col-7">7</div>
+          <div className="col-8">8</div>
+          <div className="col-9">9</div>
+          <div className="col-10">10</div>
+          <div className="col-11">11</div>
+          <div className="col-12">12</div>
         </div>
-      </main>
+      </div>
     </AppLayout>
   );
 };

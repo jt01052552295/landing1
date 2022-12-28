@@ -1,10 +1,7 @@
 @charset 'utf-8';
 // Variables
-//
-// Variables should follow the `$component-state-property-size` formula for
-// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
-$variable-prefix: bs- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
+$variable-prefix: fd- !default;
 $prefix: $variable-prefix !default;
 
 // Color system
@@ -98,10 +95,21 @@ $theme-colors: map-merge(
 $font-family-sans-serif: system-ui, -apple-system, 'Nanum Gothic', 'Malgun Gothic', dotum, 'Helvetica', sans-serif !default;
 
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
+  mobile: 0,
+  tablet: 768px,
+  pc: 1200px,
 ) !default;
+
+$container-max-widths: (
+  mobile: 0,
+  tablet: 768px,
+  pc: 1200px,
+) !default;
+
+// Grid columns
+$grid-columns: 12 !default;
+$grid-gutter-width: 10px !default;
+$grid-row-columns: 6 !default;
+
+// Container padding
+$container-padding-x: $grid-gutter-width !default;

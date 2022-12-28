@@ -4,8 +4,11 @@
 // Configuration
 @import 'utils/variables';
 @import 'utils/breakpoints';
+@import 'utils/grid';
 @import 'utils/mixins';
 @import 'utils/functions';
+
+@import 'utils/root';
 
 // base
 @import 'base/reset';

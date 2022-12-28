@@ -8,8 +8,8 @@ body {
   margin: 0;
   padding: 0;
   font-size: 1rem;
-  font-family: $font-family-sans-serif;
-  background: $gray-200;
+  font-family: var(--fd-font-sans-serif);
+  background: var(--fd-gray-200);
 }
 html,
 h1,
@@ -76,7 +76,7 @@ input,
 button {
   margin: 0;
   padding: 0;
-  font-family: $font-family-sans-serif;
+  font-family: var(--fd-font-sans-serif);
   font-size: 1rem;
 }
 input[type='submit'] {
@@ -92,7 +92,7 @@ table {
 }
 textarea,
 select {
-  font-family: $font-family-sans-serif;
+  font-family: var(--fd-font-sans-serif);
   font-size: 1rem;
 }
 select {

@@ -19,9 +19,6 @@
   display: block;
   width: $width;
   min-width: $min-width;
-  margin: 0;
-  padding: 0;
-  clear: both;
 }
 
 @mixin after-clear {
@@ -31,4 +28,12 @@
   font-size: 0;
   visibility: hidden;
   clear: both;
+}
+
+@mixin make-container() {
+  width: 100%;
+  padding-left: var(--fd-gutter-x, 0);
+  padding-right: var(--fd-gutter-x, 0);
+  margin-right: auto;
+  margin-left: auto;
 }
