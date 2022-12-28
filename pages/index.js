@@ -1,10 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import AppLayout from '../components/AppLayout';
+import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
+
+import Section01 from '../components/section/Section01';
+import Section02 from '../components/section/Section02';
+import Section03 from '../components/section/Section03';
+import Section04 from '../components/section/Section04';
+import Section05 from '../components/section/Section05';
 
 const Main = (props) => {
   return (
     <AppLayout>
+      <Header />
+      <Section01 />
+      <Section02 />
+      <Section03 />
+      <Section04 />
+      <Section05 />
       <div className="fd-container-fluid">
         <div className="grid">
           <div className="col-1 col-tablet-12">1</div>
@@ -21,6 +35,7 @@ const Main = (props) => {
           <div className="col-12">12</div>
         </div>
       </div>
+      <Footer />
     </AppLayout>
   );
 };
