@@ -1,8 +1,8 @@
-@mixin devices($device) {
-  $width: 0;
-
-  @if $width == 0 {
+@mixin devices($device: 'none', $width: 0) {
+  @if $device != 'none' and $width == 0 {
     $width: map-get($grid-breakpoints, $device);
+  } @else if $device == 'none' and $width > 0 {
+    $width: $width + 'px';
   }
 
   // @debug 'divider offset: #{$width}';

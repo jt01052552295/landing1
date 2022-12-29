@@ -74,6 +74,7 @@ h5,
 h6,
 form,
 fieldset,
+figure,
 img {
   margin: 0;
   padding: 0;
@@ -856,4 +857,218 @@ input[type=text]::-ms-clear {
 .ft .lower p {
   width: 100%;
   text-align: center;
+}
+
+.st03 {
+  position: relative;
+  background-color: var(--fd-dark);
+}
+
+.article-list {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 768px) {
+  .article-list {
+    height: 700px;
+  }
+}
+
+.article {
+  flex: 50%;
+  padding: 20px 10px;
+  position: relative;
+  opacity: 0.6;
+  z-index: 1;
+  transition: opacity 1s, flex 1s;
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .article {
+    flex: 1;
+    padding: 70px 40px 100px;
+  }
+}
+
+.article::before {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  background: var(--fd-gray-700);
+  top: 0;
+  bottom: 0;
+  left: -200px; /*마우스 호버 전 article의 왼쪽 바깥쪽에 배치*/
+  opacity: 0; /*마우스 호버 전 투명하게 숨김 처리*/
+  transition: 1s;
+}
+@media only screen and (min-width: 768px) {
+  .article::before {
+    width: 80%;
+  }
+}
+
+.article .box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  position: relative;
+}
+
+.article .box .con {
+  width: 100%;
+  transition: 0.5s; /*호버시 전환효과 처리 */
+}
+
+.article .box .con h3 {
+  color: #fff;
+  margin-bottom: 40px;
+  padding-top: 10px;
+  transition: 1s;
+}
+@media only screen and (min-width: 768px) {
+  .article .box .con h3 {
+    padding-top: 70px;
+  }
+}
+
+.article .box .con h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #777;
+  margin-top: 20px;
+  transition: 1.5s;
+}
+
+.article .box .con p {
+  color: #999;
+}
+
+.article .box figure {
+  width: 100%;
+  height: 15vh;
+  background: #777;
+  overflow: hidden;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+  filter: saturate(10%); /* 채도를 낮춤*/
+  transform-origin: left center; /*왼쪽 방향 기준으로 변형이 일어나도록 중심축 변경*/
+  transition: 1s;
+  margin-top: 10px;
+}
+@media only screen and (min-width: 768px) {
+  .article .box figure {
+    margin-top: 0;
+  }
+}
+
+.article .box figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+}
+
+@media only screen and (min-width: 768px) {
+  .article:hover {
+    flex: 1.5;
+    opacity: 1;
+    z-index: 2;
+  }
+  .article:hover::before {
+    left: 0px;
+    opacity: 1;
+  }
+  .article:hover .box .con {
+    width: 75%;
+  }
+  .article:hover .box .con h3 {
+    font-size: 3vw;
+    padding-top: 0px;
+  }
+  .article:hover .box .con h3::after {
+    width: 6vw;
+    background: var(--fd-warning);
+  }
+  .article:hover .box figure {
+    height: 25vh;
+    filter: saturate(120%);
+    transform: translateY(3vh);
+  }
+}
+.viewArticle {
+  width: 100%;
+  background: var(--fd-gray-900);
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: -100%; /*왼쪽 화면 바깥에 배치*/
+  opacity: 0; /*투명도 0으로 비활성화*/
+  z-index: 2; /*2로 설정하며 section은 덮고 h1과 nav는 aside 위쪽에 배치*/
+  padding: 20px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /*자식 요소인 .txt와 figure를 좌우 양 끝에 배치 */
+  transition: 1s; /*전환효과 설정*/
+}
+@media only screen and (min-width: 768px) {
+  .viewArticle {
+    flex-wrap: nowrap;
+  }
+}
+
+.viewArticle.on {
+  /*클래스 on이 붙으면*/
+  opacity: 1;
+  left: 0%; /*왼쪽 바깥에서 화면 안쪽으로 이동하도록 설정*/
+}
+
+.viewArticle .box {
+  width: 100%;
+  height: auto;
+}
+@media only screen and (min-width: 768px) {
+  .viewArticle .box {
+    width: 25%;
+    height: 100%;
+  }
+}
+
+.viewArticle .box h3 {
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.viewArticle .box p {
+  color: #666;
+  margin-bottom: 60px;
+}
+
+.viewArticle .box button.closeBtn {
+  color: var(--fd-warning);
+  background: none;
+  outline: 0;
+  border: 0 none;
+}
+
+.viewArticle figure {
+  width: 100%;
+  height: auto;
+}
+@media only screen and (min-width: 768px) {
+  .viewArticle figure {
+    width: 72%;
+    height: 100%;
+  }
+}
+
+.viewArticle figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
