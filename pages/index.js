@@ -18,7 +18,6 @@ const Main = (props) => {
       <Section02 />
       <Section03 />
       <Section04 />
-      <Section05 />
       <div className="fd-container-fluid">
         <div className="grid">
           <div className="col-1 col-tablet-12">1</div>

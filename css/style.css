@@ -1072,3 +1072,385 @@ input[type=text]::-ms-clear {
   height: 100%;
   object-fit: cover;
 }
+
+.music-list {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(25deg, var(--fd-primary), var(--fd-info));
+}
+
+.music-box {
+  width: 50vw;
+  height: 45vh;
+  position: absolute;
+  left: 50%;
+  top: 140%;
+  margin-top: -25vh;
+  margin-left: -25vw;
+  transition: 1s; /* 11단계 */
+}
+@media only screen and (min-width: 768px) {
+  .music-box {
+    width: 20vw;
+    height: 65vh;
+    margin-top: -25vh;
+    margin-left: -10vw;
+  }
+}
+
+.music-box article {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.music-box article .box {
+  /*음악 플레이어 패널 콘텐츠 그룹*/
+  width: 100%;
+  height: 100%;
+  background: var(--fd-white);
+  padding: 5vh 2.5vw 8vh;
+  display: flex;
+  justify-content: center;
+  align-content: space-between; /*자식 콘텐츠의 안쪽 세로 여백을 균등 배치*/
+  flex-wrap: wrap;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0.6;
+  transform: scale(0.8);
+  transition: opacity 1s, transform 1s;
+}
+
+.music-box article.on .box {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+
+.music-box article .box .pic {
+  width: 25vw;
+  height: 25vw;
+  margin: 0px auto;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: 200%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .music-box article .box .pic {
+    width: 15vw;
+    height: 15vw;
+  }
+}
+
+.music-box article .box .pic::before,
+.music-box article .box .pic::after {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: inherit;
+  background-position: center;
+  background-repeat: inherit;
+  background-size: cover;
+  transform-origin: center center;
+}
+
+.music-box article .box .pic::before {
+  transform: translateY(10%);
+  filter: blur(20px) brightness(1.6);
+}
+
+.music-box article .box .pic .dot {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  background: #e4f1ff;
+  position: relative;
+  z-index: 3;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.music-box article.music00 .box .pic {
+  background-image: url("/images/section04/01.jpg");
+}
+
+.music-box article.music01 .box .pic {
+  background-image: url("/images/section04/02.jpg");
+}
+
+.music-box article.music02 .box .pic {
+  background-image: url("/images/section04/03.jpg");
+}
+
+.music-box article.music03 .box .pic {
+  background-image: url("/images/section04/04.jpg");
+}
+
+.music-box article.music04 .box .pic {
+  background-image: url("/images/section04/05.jpg");
+}
+
+.music-box article.music05 .box .pic {
+  background-image: url("/images/section04/06.jpg");
+}
+
+.music-box article.music06 .box .pic {
+  background-image: url("/images/section04/07.jpg");
+}
+
+.music-box article.music07 .box .pic {
+  background-image: url("/images/section04/08.jpg");
+}
+
+.music-box article .box .con {
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.music-box article .box .con h2 {
+  font-size: 20px;
+  font-family: "arial";
+  color: #222;
+  margin-bottom: 2vh;
+}
+
+.music-box article .box .con p {
+  font-size: 12px;
+  margin-bottom: 3vh;
+  color: #777;
+}
+
+.music-box article .box .con ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.music-box article .box .con ul li {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+.music-box article .box .con ul li.play {
+  transform: scale(1.5);
+}
+
+.music-box article .box .con ul li:hover {
+  transform: scale(1.5);
+}
+
+.music-box article .box .con ul li.play:hover {
+  transform: scale(2);
+  opacity: 1;
+}
+
+@keyframes ani {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ani2 {
+  0% {
+    transform: translateY(10%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(10%) rotate(360deg);
+  }
+}
+.music-box article .box .pic.on::after {
+  animation: ani 4s linear infinite;
+}
+
+.music-box article .box .pic.on::before {
+  animation: ani2 4s linear infinite;
+}
+
+@keyframes anibox {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  1% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+.music-box article .box::before,
+.music-box article .box::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background: var(--fd-white);
+}
+
+.music-box article.anibox .box::before {
+  animation: anibox 1s ease 1;
+}
+
+.music-box article.anibox .box::after {
+  animation: anibox 1s ease 0.3s 1;
+}
+
+button.btnPrev {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-35vw, -70%);
+  display: flex;
+  align-items: center;
+  text-align: left;
+  background: none;
+  outline: 0;
+  border: 0 none;
+}
+@media only screen and (min-width: 768px) {
+  button.btnPrev {
+    top: 50%;
+    transform: translate(-20vw, -50%);
+  }
+}
+
+button.btnPrev span {
+  font: 11px/1 "arial";
+  color: #fff;
+  opacity: 1;
+  transform: translateX(30%);
+  transition: 0.5s;
+}
+
+button.btnPrev::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform-origin: left center;
+  transform: rotate(-180deg);
+  transition: 0.5s;
+}
+
+button.btnPrev::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  transform-origin: left center;
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+
+button.btnPrev:hover span {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+button.btnPrev:hover::before {
+  transform: rotate(-30deg);
+}
+
+button.btnPrev:hover::after {
+  transform: rotate(30deg);
+}
+
+button.btnNext {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 70%;
+  right: 50%;
+  transform: translate(35vw, -70%);
+  display: flex;
+  align-items: center;
+  text-align: right;
+  background: none;
+  outline: 0;
+  border: 0 none;
+}
+@media only screen and (min-width: 768px) {
+  button.btnNext {
+    top: 50%;
+    transform: translate(20vw, -50%);
+  }
+}
+
+button.btnNext span {
+  font: 11px/1 "arial";
+  color: #fff;
+  opacity: 1;
+  transform: translateX(-30%);
+  transition: 0.5s;
+}
+
+button.btnNext::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform-origin: right center;
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+
+button.btnNext::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  transform-origin: right center;
+  transform: rotate(-180deg);
+  transition: 0.5s;
+}
+
+button.btnNext:hover span {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+button.btnNext:hover::before {
+  transform: rotate(30deg);
+}
+
+button.btnNext:hover::after {
+  transform: rotate(-30deg);
+}
