@@ -1,0 +1,196 @@
+.st01 {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  animation: sky linear 20s infinite;
+}
+
+.ani-container {
+  width: 1000px;
+  height: 400px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+}
+
+.ani-container .sky {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.ani-container .sky .sun {
+  position: absolute;
+  top: -110px;
+  right: -34px;
+  margin-left: -100px;
+  transform-origin: center 500px;
+  animation: sun linear 5s infinite;
+}
+.ani-container .sky .cloud1 {
+  position: absolute;
+  top: 110px;
+  left: 10%;
+  animation: cloud linear 10s infinite;
+}
+.ani-container .sky .cloud2 {
+  position: absolute;
+  top: 27px;
+  left: 0%;
+  animation: cloud linear 20s infinite;
+}
+
+.ani-container .town .night {
+  position: absolute;
+  bottom: 0px;
+  left: 40px;
+}
+.ani-container .town .day {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  opacity: 0.7;
+  animation: flow linear 20s infinite;
+}
+.ani-container .town .day2 {
+  position: absolute;
+  bottom: 0px;
+  left: 86%;
+  opacity: 0.7;
+  animation: flow2 linear 20s infinite;
+}
+.ani-container .town .circle {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+
+  animation: rotation linear 20s infinite;
+}
+
+.ani-container .people {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ani-container .people .man {
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  animation: man linear 20s infinite, man2 linear 2s infinite;
+}
+
+@keyframes sky {
+  0% {
+    background-color: var(--fd-pink);
+  }
+  25% {
+    background-color: var(--fd-yellow);
+  }
+  50% {
+    background-color: var(--fd-red);
+  }
+  75% {
+    background-color: var(--fd-orange);
+  }
+  100% {
+    background-color: var(--fd-gray);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flow {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: -86%;
+  }
+}
+
+@keyframes flow2 {
+  0% {
+    left: 86%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes man {
+  0% {
+    left: 50%;
+    transform: rotate(20deg);
+  }
+  100% {
+    left: 60%;
+    transform: rotate(320deg);
+  }
+}
+
+@keyframes man2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes sun {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cloud {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 90%;
+    opacity: 0;
+  }
+}
