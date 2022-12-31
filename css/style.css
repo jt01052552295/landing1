@@ -2158,10 +2158,6 @@ button.btnNext:hover::after {
   transform: rotate(-30deg);
 }
 
-.st06 {
-  background-color: var(--fd-gray-dark);
-}
-
 #cover-canvas {
   position: fixed;
   top: 0;
@@ -2178,6 +2174,7 @@ button.btnNext:hover::after {
   left: 0;
   width: 100vw;
   height: 100vh;
+  background-color: black;
 }
 
 #video-studiomeal {
