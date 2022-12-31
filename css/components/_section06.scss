@@ -1,0 +1,25 @@
+.st06 {
+  background-color: var(--fd-gray-dark);
+}
+
+#cover-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#video-studiomeal {
+  transform: scale(1);
+}

@@ -8,9 +8,31 @@ import Section01 from '../components/section/Section01';
 import Section02 from '../components/section/Section02';
 import Section03 from '../components/section/Section03';
 import Section04 from '../components/section/Section04';
-import Section05 from '../components/section/Section05';
 
+function optimizeAnimation(callback) {
+  let ticking = false;
+
+  return () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(() => {
+        callback();
+        ticking = false;
+      });
+    }
+  };
+}
 const Main = (props) => {
+  useEffect(() => {
+    window.addEventListener(
+      'scroll',
+      optimizeAnimation(() => {
+        console.log('Hi there 👋');
+      }),
+      { passive: true },
+    );
+  }, []);
+
   return (
     <AppLayout>
       <Header />

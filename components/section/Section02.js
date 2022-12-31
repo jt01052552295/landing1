@@ -181,7 +181,7 @@ const Section02 = (props) => {
           <div className="inner">
             <div>
               <div>
-                <video src="/images/section02/loop.mp4" loop autoplay muted></video>
+                <video src="/images/section02/loop.mp4" loop autoPlay muted></video>
                 <h2>
                   Promote Your
                   <br /> Company
